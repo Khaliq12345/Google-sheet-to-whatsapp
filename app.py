@@ -23,7 +23,8 @@ def main():
             st.success("DONE!")
 
 if st.session_state['to_login']:
-    main()
+    with st.expander("The app"):
+        main()
 else:
     with st.form("Login"):
         username = st.text_input("Username")

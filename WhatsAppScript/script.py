@@ -9,7 +9,7 @@ import streamlit as st
 currentDirectory = os.path.dirname(os.path.abspath(__file__))
 
 def send_image_to_group_byUpload(imagePath, fileName, caption):
-    url = f"{st.secrets["apiUrl"]}/waInstance{st.secrets["idInstance"]}/sendFileByUpload/{st.secrets["apiTokenInstance"]}"
+    url = f'{st.secrets["apiUrl"]}/waInstance{st.secrets["idInstance"]}/sendFileByUpload/{st.secrets["apiTokenInstance"]}'
 
     payload = {'chatId': st.secrets["groupId"],
     'caption': caption}
@@ -23,8 +23,8 @@ def send_image_to_group_byUpload(imagePath, fileName, caption):
     print(response.text.encode('utf8'))
 
 def send_text_message_to_group(message):
-    url = f"{st.secrets["apiUrl"]}/waInstance{st.secrets["idInstance"]}/sendMessage/{st.secrets["apiTokenInstance"]}"
-    payload = f"{{\r\n\t\"chatId\": \"{st.secrets["groupId"]}\",\r\n\t\"message\": \"{message}\"\r\n}}"
+    url = f'{st.secrets["apiUrl"]}/waInstance{st.secrets["idInstance"]}/sendMessage/{st.secrets["apiTokenInstance"]}'
+    payload = f'{{\r\n\t\"chatId\": \"{st.secrets["groupId"]}\",\r\n\t\"message\": \"{message}\"\r\n}}'
     headers = {
     'Content-Type': 'application/json'
     }

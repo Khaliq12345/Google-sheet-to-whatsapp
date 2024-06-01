@@ -9,7 +9,8 @@ def verify_login(username: str, password):
     match [username, password]:
         case [st.secrets.username, st.secrets.password]:
             st.session_state['to_login'] = True
-            return st.balloons()
+            st.balloons()
+            st.rerun()
         case _:
             return st.error("Username or password incorrect")
 
@@ -23,8 +24,7 @@ def main():
             st.success("DONE!")
 
 if st.session_state['to_login']:
-    with st.expander("The app"):
-        main()
+    main()
 else:
     with st.form("Login"):
         username = st.text_input("Username")

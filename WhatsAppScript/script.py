@@ -3,7 +3,6 @@ import requests
 import re
 import pandas as pd
 from . import download_sheet
-from . import config
 import streamlit as st
 
 currentDirectory = os.path.dirname(os.path.abspath(__file__))

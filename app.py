@@ -29,5 +29,4 @@ else:
     with st.form("Login"):
         username = st.text_input("Username")
         password = st.text_input("Password")
-        if st.form_submit_button("Login"):
-            verify_login(username, password)
+        st.form_submit_button("Login", on_click=verify_login, args=(username, password))

@@ -28,6 +28,6 @@ if st.session_state['to_login']:
 else:
     with st.form("Login"):
         username = st.text_input("Username")
-        password = st.text_input("Password")
+        password = st.text_input("Password", type='password')
         if st.form_submit_button("Login"):
             verify_login(username, password)
